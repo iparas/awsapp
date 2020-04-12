@@ -99,13 +99,13 @@ class JourneyCanvasComponent extends React.Component {
               <td colspan = '3' style={{background:"yellow"}}><label><b>JOURNEY STATS</b></label></td>
             </tr>
             <tr>
-              <td><br /><JourneyComponent value={'ONBOARDING C PLUS'} /></td>
+              <td><br /><JourneyComponent value={'Journey 1'} /></td>
             </tr>
             <tr>
-              <td><br /><JourneyComponent value={'CLOSED LISTING'} /></td>
+              <td><br /><JourneyComponent value={'Journey 2'} /></td>
             </tr>
             <tr>
-              <td><br /><JourneyComponent value ={'AUTO RENEWAL'} /></td>
+              <td><br /><JourneyComponent value ={'Journey 3'} /></td>
             </tr>
           </table>
         </center>
