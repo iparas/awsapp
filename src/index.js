@@ -335,7 +335,7 @@ render() {
             <td width="50%">
                 <center>
                   <form onSubmit={this.handleSubmit} >
-                      <input className="textboxStyling" placeholder="CMID/Email/Phone" type="text" value={this.state.value} onChange={this.handleChange} />
+                      <input className="textboxStyling" placeholder="Email/Phone" type="text" value={this.state.value} onChange={this.handleChange} />
                       <input className="searchButtonStyling" type="submit" value="EMAIL" onClick={this.handleEmailSubmit} />
                       <input className="searchButtonStyling" type="submit" value="SMS" onClick={this.handleSMSSubmit} />
                   </form>
