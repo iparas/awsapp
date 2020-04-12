@@ -249,7 +249,7 @@ class PageBottom_Component extends React.Component {
     const fontStyle = { fontSize: 14, background: "lightgray" }
   return (
     <div style={fontStyle} align="right">
-      Developed by: Move Enterprise Systems
+      AWS Amplify App
     </div>
     );
   }
