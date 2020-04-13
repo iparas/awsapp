@@ -2,6 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {Line} from 'react-chartjs-2';
+import Amplify  from 'aws-amplify';
+import awsconfig from './aws-exports';
+import { withAuthenticator } from 'aws-amplify-react';
+import {API, Storage, graphqlOperation} from 'aws-amplify';
+
+Amplify.configure (awsconfig);
 
 // Chart related components 
  
@@ -318,6 +324,29 @@ handleSMSSubmit(event) {
   //event.preventDefault()
 }
 
+post = async () => {
+  console.log('calling api');
+  const response = await API.post('myapi', '/items', {
+    body: {
+      type: '1',
+      name: 'hello amplify!'
+    }
+  });
+  alert(JSON.stringify(response, null, 2));
+};
+
+get = async () => {
+  console.log('calling api');
+  const response = await API.get('myapi', '/items/object/1');
+  alert(JSON.stringify(response, null, 2));
+};
+
+list = async () => {
+  console.log('calling api');
+  const response = await API.get('myapi', '/items/1');
+  alert(JSON.stringify(response, null, 2));
+};
+
 render() {
 
   var dropshadow={ boxShadow: "0px 0px 0px #000000" }
@@ -335,6 +364,8 @@ render() {
             <td width="50%">
                 <center>
                   <form onSubmit={this.handleSubmit} >
+                      <button onClick={this.post}>POST</button>
+                      <button onClick={this.get}>GET</button>
                       <input className="textboxStyling" placeholder="Email/Phone" type="text" value={this.state.value} onChange={this.handleChange} />
                       <input className="searchButtonStyling" type="submit" value="EMAIL" onClick={this.handleEmailSubmit} />
                       <input className="searchButtonStyling" type="submit" value="SMS" onClick={this.handleSMSSubmit} />
@@ -343,7 +374,7 @@ render() {
             </td>
             <td width="25%" align="right">
               <center>
-                <div align="right"><center>+++</center></div>
+                <div align="right"><center>+++**</center></div>
               </center>
             </td>
           </tr>

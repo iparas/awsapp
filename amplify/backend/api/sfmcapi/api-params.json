@@ -1,0 +1,48 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "getSFMCRecords",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
+        }
+    ],
+    "resourceName": "sfmcapi",
+    "apiName": "sfmcapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "getSFMCRecords"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-sfmcamplifyapp-dev-183957-authRole",
+        "unAuthRoleName": "amplify-sfmcamplifyapp-dev-183957-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "getSFMCRecords",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
